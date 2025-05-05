@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Learnings</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        h2 {
+            color: #4a90e2;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4a90e2;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            transition: transform 0.2s ease-in-out;
+        }
+        li:hover {
+            transform: translateX(10px);
+        }
+        a {
+            color: #b8c7e0;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #2c2c2c;
+        }
+        a:hover {
+            color: #ffffff;
+            background-color: #3a3a3a;
+        }
+        #file-list {
+            background-color: #2c2c2c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #resizer {
+            height: 5px;
+            background-color: #4a90e2;
+            margin: 40px 0;
+            border-radius: 2px;
+        }
+        #markdown-content {
+            background-color: #2c2c2c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MCP Learnings</h1>
+        
+        <div id="file-list">            
+            <h2>Tutorials</h2>
+            <ul>
+                <li><a href="Tutorials/1. Official py and ts sdk tutes/index.html">1. Official py and ts sdk tutes</a></li>
+                <li><a href="Tutorials/2. Official c# and java sdk tutes/index.html">2. Official c# and java sdk tutes</a></li>
+                <li><a href="Tutorials/3. Official mcp spec tutes/index.html">3. Official mcp spec tutes</a></li>
+                <li><a href="Tutorials/4. jlowin-fastmcp tutes/index.html">4. jlowin-fastmcp tutes</a></li>
+                <li><a href="Tutorials/5. punkpeye-fastmcp tutes/index.html">5. punkpeye-fastmcp tutes</a></li>
+                <li><a href="Tutorials/6. Remaining/index.html">6. Remaining</a></li>
+            </ul>
+        </div>
+        
+        <div id="resizer"></div>
+        
+        <div id="markdown-content">
+            <div id="content"></div>
+        </div>
+    </div>
+</body>
+</html>
