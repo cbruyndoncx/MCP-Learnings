@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>MCP Learnings</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on MCP Learnings</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Blog 7: When the Server Asks - Client Capabilities (Sampling &amp; Roots) Across MCP SDKs</title>
+    <link>https://quartz.jzhao.xyz/3-Official-mcp-spec-tutes/Blogs/blog-7</link>
+    <guid>https://quartz.jzhao.xyz/3-Official-mcp-spec-tutes/Blogs/blog-7</guid>
+    <description>Blog 7: When the Server Asks - Client Capabilities (Sampling &amp; Roots) Across MCP SDKs Series: Deep Dive into the Model Context Protocol SDKs (Advanced Topics) Post: 7 of 12 Thus far in our advanced series on the Model Context Protocol (MCP) SDKs, we’ve primarily examined features where the serve...</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 5: Synthesis - DX Trade-offs, Use Cases, and Ecosystem Fit for `punkpeye-fastmcp`</title>
+    <link>https://quartz.jzhao.xyz/5-punkpeye-fastmcp-tutes/Blogs/blog-5</link>
+    <guid>https://quartz.jzhao.xyz/5-punkpeye-fastmcp-tutes/Blogs/blog-5</guid>
+    <description>Blog 5: Synthesis - DX Trade-offs, Use Cases, and Ecosystem Fit for punkpeye-fastmcp Series: Deep Dive into the Model Context Protocol SDKs (Advanced Topics) Post: 5 of 5 (punkpeye-fastmcp Deep Dive) Our deep dive into punkpeye-fastmcp has taken us from its positioning as a framework above the offic...</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 3: Building MCP Servers the Easy Way: McpServer (TS) vs. FastMCP (Python)</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-3</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-3</guid>
+    <description>Blog 3: Building MCP Servers the Easy Way: McpServer (TS) vs.</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 12: Extending MCP - Custom Transports, Capabilities, and SDK Modifications</title>
+    <link>https://quartz.jzhao.xyz/3-Official-mcp-spec-tutes/Blogs/blog-12</link>
+    <guid>https://quartz.jzhao.xyz/3-Official-mcp-spec-tutes/Blogs/blog-12</guid>
+    <description>Blog 12: Extending MCP - Custom Transports, Capabilities, and SDK Modifications Series: Deep Dive into the Model Context Protocol SDKs (Advanced Topics) Post: 12 of 12 In this series, we’ve thoroughly explored the standard features and architectures of the Model Context Protocol (MCP) SDKs for TypeS...</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 5: Client APIs - Consuming MCP Services in .NET and Java</title>
+    <link>https://quartz.jzhao.xyz/2-Official-c-and-java-sdk-tutes/Blogs/blog-5</link>
+    <guid>https://quartz.jzhao.xyz/2-Official-c-and-java-sdk-tutes/Blogs/blog-5</guid>
+    <description>Blog 5: Client APIs - Consuming MCP Services in .NET and Java Series: Deep Dive into the Model Context Protocol SDKs (C# &amp; Java) Post: 5 of 10 In our series exploring the Model Context Protocol (MCP) SDKs, we’ve spent the last few posts dissecting the server-side architecture – from the high-lev...</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 3: Advanced Server Patterns - Proxying, Mounting, and Generation in FastMCP v2</title>
+    <link>https://quartz.jzhao.xyz/4-jlowin-fastmcp-tutes/Blogs/blog-3</link>
+    <guid>https://quartz.jzhao.xyz/4-jlowin-fastmcp-tutes/Blogs/blog-3</guid>
+    <description>Blog 3: Advanced Server Patterns - Proxying, Mounting, and Generation in FastMCP v2 Series: Deep Dive into the Model Context Protocol SDKs (Advanced Topics) Post: 3 of 12 In Blog 2, we explored the core ergonomics of the jlowin-fastmcp server API – its decorators, type inference, and context object ...</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 1: The Blueprint - Anatomy of the MCP Specification Repository</title>
+    <link>https://quartz.jzhao.xyz/3-Official-mcp-spec-tutes/Blogs/blog-1</link>
+    <guid>https://quartz.jzhao.xyz/3-Official-mcp-spec-tutes/Blogs/blog-1</guid>
+    <description>Blog 1: The Blueprint - Anatomy of the MCP Specification Repository Series: Deep Dive into the Model Context Protocol SDKs Post: 1 of 12 (Advanced Topics) Welcome to a new deep-dive series exploring the Model Context Protocol (MCP) and its ecosystem! While our previous series examined the practical ...</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 1: Setting the Stage for .NET and Java MCP - Bridging AI Context in Enterprise</title>
+    <link>https://quartz.jzhao.xyz/2-Official-c-and-java-sdk-tutes/Blogs/blog-1</link>
+    <guid>https://quartz.jzhao.xyz/2-Official-c-and-java-sdk-tutes/Blogs/blog-1</guid>
+    <description>Blog 1: Setting the Stage for .NET and Java MCP - Bridging AI Context in Enterprise Series: Deep Dive into the Model Context Protocol SDKs (C# &amp; Java) Post: 1 of 10 The AI revolution, particularly the rise of powerful Large Language Models (LLMs), promises to transform how we interact with softw...</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 3: Sessions, Context, and Lifecycle Management in `punkpeye-fastmcp`</title>
+    <link>https://quartz.jzhao.xyz/5-punkpeye-fastmcp-tutes/Blogs/blog-3</link>
+    <guid>https://quartz.jzhao.xyz/5-punkpeye-fastmcp-tutes/Blogs/blog-3</guid>
+    <description>Blog 3: Sessions, Context, and Lifecycle Management in punkpeye-fastmcp Series: Deep Dive into the Model Context Protocol SDKs (Advanced Topics) Post: 3 of 12 Having explored how punkpeye-fastmcp simplifies defining MCP primitives (Tools, Resources, Prompts) using its add* methods, we now shift our ...</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item><item>
+    <title>Blog 14: FastMCP Obscure Gems &amp; Deep Cuts - A Comparative Look for the Curious Coder (TS vs. Py V2)</title>
+    <link>https://quartz.jzhao.xyz/6-Remaining/Blogs/blog-14</link>
+    <guid>https://quartz.jzhao.xyz/6-Remaining/Blogs/blog-14</guid>
+    <description>Blog 14: FastMCP Obscure Gems &amp; Deep Cuts - A Comparative Look for the Curious Coder (TS vs.</description>
+    <pubDate>Thu, 08 May 2025 20:27:27 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
