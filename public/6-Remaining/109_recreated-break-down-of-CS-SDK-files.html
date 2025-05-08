@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>109_recreated break down of CS SDK filessourced from github AbhijitKumarJ/MCP-Learnings</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="MCP Learnings"/><meta property="og:title" content="109_recreated break down of CS SDK filessourced from github AbhijitKumarJ/MCP-Learnings"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="109_recreated break down of CS SDK filessourced from github AbhijitKumarJ/MCP-Learnings"/><meta name="twitter:description" content="Okay, let’s meticulously list the C# SDK files, attempting to order them from least internally dependent to most internally dependent, along with their purpose."/><meta property="og:description" content="Okay, let’s meticulously list the C# SDK files, attempting to order them from least internally dependent to most internally dependent, along with their purpose."/><meta property="og:image:alt" content="Okay, let’s meticulously list the C# SDK files, attempting to order them from least internally dependent to most internally dependent, along with their purpose."/><meta property="og:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image:url" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta name="twitter:image" content="https://quartz.jzhao.xyz/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="quartz.jzhao.xyz"/><meta property="og:url" content="https://quartz.jzhao.xyz/6-Remaining/109_recreated-break-down-of-CS-SDK-files"/><meta property="twitter:url" content="https://quartz.jzhao.xyz/6-Remaining/109_recreated-break-down-of-CS-SDK-files"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Okay, let’s meticulously list the C# SDK files, attempting to order them from least internally dependent to most internally dependent, along with their purpose."/><meta name="generator" content="Quartz"/><link href="../index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL2hvbWUvY2IvcHJvamVjdHMvd3d3L01DUC1MZWFybmluZ3MvcXVhcnR6L2NvbXBvbmVudHMvc3R5bGVzIiwic291cmNlcyI6WyJtZXJtYWlkLmlubGluZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBOztBQUdGO0VBQ0U7RUFDQTs7QUFHRjtFQUNFOzs7QUFLRjtFQUNFO0VBQ0E7OztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUlKO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7O0FBRUE7RUFDRTs7QUFHRjtFQUNFOztBQUlGO0VBQ0U7RUFDQTtFQUNBIiwic291cmNlc0NvbnRlbnQiOlsiLmV4cGFuZC1idXR0b24ge1xuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsb2F0OiByaWdodDtcbiAgcGFkZGluZzogMC40cmVtO1xuICBtYXJnaW46IDAuM3JlbTtcbiAgcmlnaHQ6IDA7IC8vIE5PVEU6IHJpZ2h0IHdpbGwgYmUgc2V0IGluIG1lcm1haWQuaW5saW5lLnRzXG4gIGNvbG9yOiB2YXIoLS1ncmF5KTtcbiAgYm9yZGVyLWNvbG9yOiB2YXIoLS1kYXJrKTtcbiAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICBib3JkZXI6IDFweCBzb2xpZDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBvcGFjaXR5OiAwO1xuICB0cmFuc2l0aW9uOiAwLjJzO1xuXG4gICYgPiBzdmcge1xuICAgIGZpbGw6IHZhcigtLWxpZ2h0KTtcbiAgICBmaWx0ZXI6IGNvbnRyYXN0KDAuMyk7XG4gIH1cblxuICAmOmhvdmVyIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYm9yZGVyLWNvbG9yOiB2YXIoLS1zZWNvbmRhcnkpO1xuICB9XG5cbiAgJjpmb2N1cyB7XG4gICAgb3V0bGluZTogMDtcbiAgfVxufVxuXG5wcmUge1xuICAmOmhvdmVyID4gLmV4cGFuZC1idXR0b24ge1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNpdGlvbjogMC4ycztcbiAgfVxufVxuXG4jbWVybWFpZC1jb250YWluZXIge1xuICBwb3NpdGlvbjogZml4ZWQ7XG4gIGNvbnRhaW46IGxheW91dDtcbiAgei1pbmRleDogOTk5O1xuICBsZWZ0OiAwO1xuICB0b3A6IDA7XG4gIHdpZHRoOiAxMDB2dztcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbiAgZGlzcGxheTogbm9uZTtcbiAgYmFja2Ryb3AtZmlsdGVyOiBibHVyKDRweCk7XG4gIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC41KTtcblxuICAmLmFjdGl2ZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG5cbiAgJiA+ICNtZXJtYWlkLXNwYWNlIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgIGJhY2tncm91bmQtY29sb3I6IHZhcigtLWxpZ2h0KTtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHRvcDogNTAlO1xuICAgIGxlZnQ6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbiAgICBoZWlnaHQ6IDgwdmg7XG4gICAgd2lkdGg6IDgwdnc7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcblxuICAgICYgPiAubWVybWFpZC1jb250ZW50IHtcbiAgICAgIHBhZGRpbmc6IDJyZW07XG4gICAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgICB0cmFuc2Zvcm0tb3JpZ2luOiAwIDA7XG4gICAgICB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4xcyBlYXNlO1xuICAgICAgb3ZlcmZsb3c6IHZpc2libGU7XG4gICAgICBtaW4taGVpZ2h0OiAyMDBweDtcbiAgICAgIG1pbi13aWR0aDogMjAwcHg7XG5cbiAgICAgIHByZSB7XG4gICAgICAgIG1hcmdpbjogMDtcbiAgICAgICAgYm9yZGVyOiBub25lO1xuICAgICAgfVxuXG4gICAgICBzdmcge1xuICAgICAgICBtYXgtd2lkdGg6IG5vbmU7XG4gICAgICAgIGhlaWdodDogYXV0bztcbiAgICAgIH1cbiAgICB9XG5cbiAgICAmID4gLm1lcm1haWQtY29udHJvbHMge1xuICAgICAgcG9zaXRpb246IGFic29sdXRlO1xuICAgICAgYm90dG9tOiAyMHB4O1xuICAgICAgcmlnaHQ6IDIwcHg7XG4gICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgZ2FwOiA4cHg7XG4gICAgICBwYWRkaW5nOiA4cHg7XG4gICAgICBiYWNrZ3JvdW5kOiB2YXIoLS1saWdodCk7XG4gICAgICBib3JkZXI6IDFweCBzb2xpZCB2YXIoLS1saWdodGdyYXkpO1xuICAgICAgYm9yZGVyLXJhZGl1czogNnB4O1xuICAgICAgYm94LXNoYWRvdzogMCAycHggNHB4IHJnYmEoMCwgMCwgMCwgMC4xKTtcbiAgICAgIHotaW5kZXg6IDI7XG5cbiAgICAgIC5tZXJtYWlkLWNvbnRyb2wtYnV0dG9uIHtcbiAgICAgICAgZGlzcGxheTogZmxleDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgICAgIHdpZHRoOiAzMnB4O1xuICAgICAgICBoZWlnaHQ6IDMycHg7XG4gICAgICAgIHBhZGRpbmc6IDA7XG4gICAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgICAgY29sb3I6IHZhcigtLWRhcmspO1xuICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7XG4gICAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICAgICAgZm9udC1zaXplOiAxNnB4O1xuICAgICAgICBmb250LWZhbWlseTogdmFyKC0tYm9keUZvbnQpO1xuICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4ycyBlYXNlO1xuXG4gICAgICAgICY6aG92ZXIge1xuICAgICAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICAgIH1cblxuICAgICAgICAmOmFjdGl2ZSB7XG4gICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDFweCk7XG4gICAgICAgIH1cblxuICAgICAgICAvLyBTdHlsZSB0aGUgcmVzZXQgYnV0dG9uIGRpZmZlcmVudGx5XG4gICAgICAgICY6bnRoLWNoaWxkKDIpIHtcbiAgICAgICAgICB3aWR0aDogYXV0bztcbiAgICAgICAgICBwYWRkaW5nOiAwIDEycHg7XG4gICAgICAgICAgZm9udC1zaXplOiAxNHB4O1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */</style><script src="../prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://quartz.jzhao.xyz/index.xml"/></head><body data-slug="6-Remaining/109_recreated-break-down-of-CS-SDK-files"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">MCP Learnings</a></h2><div class="spacer mobile-only"></div><div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-content"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" aria-expanded="false"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../6-Remaining/">6 Remaining</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>109_recreated break down of CS SDK files</a></div></nav><h1 class="article-title">109_recreated break down of CS SDK files</h1><p show-comma="true" class="content-meta"><time datetime="2025-05-08T22:09:05.000Z">May 09, 2025</time><span>12 min read</span></p></div></div><article class="popover-hint"><p>Okay, let’s meticulously list the C# SDK files, attempting to order them from least internally dependent to most internally dependent, along with their purpose. This ordering is approximate, as dependencies can be complex, but it follows a general flow from foundational definitions to higher-level abstractions and integrations.</p>
+<p><strong>Level 0: Foundational Utilities &amp; Polyfills (Minimal internal SDK dependencies; rely on .NET BCL)</strong></p>
+<ol>
+<li><code>Common/Polyfills/**/*.cs</code>:
+<ul>
+<li><strong>Files:</strong> Numerous files under <code>System/</code>, <code>System/Collections/</code>, <code>System/Diagnostics/</code>, etc. (e.g., <code>CollectionExtensions.cs</code>, <code>DynamicallyAccessedMembersAttribute.cs</code>, <code>StreamExtensions.cs</code>, <code>TaskExtensions.cs</code>, <code>IsExternalInit.cs</code>, <code>RequiredMemberAttribute.cs</code>, etc.)</li>
+<li><strong>Purpose:</strong> Provide implementations of newer .NET APIs and attributes for older target frameworks (like netstandard2.0 or net472) that the SDK supports. This allows the main SDK code to use modern C# features and APIs consistently across targets. They depend almost exclusively on the base .NET libraries for the specific framework they are polyfilling.</li>
+</ul>
+</li>
+<li><code>Common/Utils/Throw.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Contains static helper methods (<code>IfNull</code>, <code>IfNullOrWhiteSpace</code>) for concisely throwing common argument exceptions. Reduces boilerplate code.</li>
+<li><strong>Dependencies:</strong> .NET BCL Exceptions (<code>ArgumentNullException</code>, <code>ArgumentException</code>).</li>
+</ul>
+</li>
+<li><code>Common/Utils/SemaphoreSlimExtensions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Provides the <code>LockAsync</code> extension method for <code>SemaphoreSlim</code>, offering a convenient <code>using</code>-based pattern for asynchronous locking.</li>
+<li><strong>Dependencies:</strong> .NET BCL (<code>SemaphoreSlim</code>, <code>ValueTask</code>, <code>IDisposable</code>).</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 1: Core Protocol Constants, Enums, Basic Structures, and Exceptions</strong></p>
+<ol start="4">
+<li><code>ModelContextProtocol/McpErrorCode.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the <code>McpErrorCode</code> enum containing standard JSON-RPC error codes used within MCP.</li>
+<li><strong>Dependencies:</strong> .NET BCL Enum.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/McpException.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the primary custom exception class (<code>McpException</code>) used throughout the SDK to represent MCP-specific errors, often wrapping an <code>McpErrorCode</code>.</li>
+<li><strong>Dependencies:</strong> .NET BCL <code>Exception</code>, <code>McpErrorCode.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/RequestId.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the <code>RequestId</code> struct to represent the JSON-RPC <code>id</code> field, which can be a string or a number. Includes a custom <code>JsonConverter</code> to handle serialization/deserialization.</li>
+<li><strong>Dependencies:</strong> .NET BCL, <code>System.Text.Json</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/ProgressToken.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the <code>ProgressToken</code> struct, similar to <code>RequestId</code>, representing the token used for progress notifications. Includes a custom <code>JsonConverter</code>.</li>
+<li><strong>Dependencies:</strong> .NET BCL, <code>System.Text.Json</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/NotificationMethods.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines string constants for standard MCP notification method names (e.g., <code>&quot;notifications/progress&quot;</code>).</li>
+<li><strong>Dependencies:</strong> None internal.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/RequestMethods.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines string constants for standard MCP request method names (e.g., <code>&quot;tools/list&quot;</code>).</li>
+<li><strong>Dependencies:</strong> None internal.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/Role.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the <code>Role</code> enum (<code>User</code>, <code>Assistant</code>). Uses <code>CustomizableJsonStringEnumConverter</code>.</li>
+<li><strong>Dependencies:</strong> <code>Utils/Json/CustomizableJsonStringEnumConverter.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/LoggingLevel.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the <code>LoggingLevel</code> enum (Debug, Info, etc.). Uses <code>CustomizableJsonStringEnumConverter</code>.</li>
+<li><strong>Dependencies:</strong> <code>Utils/Json/CustomizableJsonStringEnumConverter.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/ContextInclusion.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the <code>ContextInclusion</code> enum (None, ThisServer, AllServers). Uses <code>CustomizableJsonStringEnumConverter</code>.</li>
+<li><strong>Dependencies:</strong> <code>Utils/Json/CustomizableJsonStringEnumConverter.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/Implementation.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the simple <code>Implementation</code> class used to identify clients and servers (<code>Name</code>, <code>Version</code>).</li>
+<li><strong>Dependencies:</strong> .NET BCL.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 2: JSON-RPC Message Structures &amp; Basic MCP Types</strong></p>
+<ol start="14">
+<li><code>ModelContextProtocol/Protocol/Messages/JsonRpcMessage.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Abstract base class for all JSON-RPC messages (<code>jsonrpc</code> property). Contains the crucial <code>[JsonConverter]</code> attribute pointing to <code>JsonRpcMessageConverter</code>.</li>
+<li><strong>Dependencies:</strong> <code>Utils/Json/JsonRpcMessageConverter.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/JsonRpcMessageWithId.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Abstract base class for messages that have an ID (Requests, Responses, Errors). Inherits <code>JsonRpcMessage</code>.</li>
+<li><strong>Dependencies:</strong> <code>JsonRpcMessage.cs</code>, <code>RequestId.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/JsonRpcNotification.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Represents a JSON-RPC Notification message (<code>method</code>, <code>params</code>). Inherits <code>JsonRpcMessage</code>.</li>
+<li><strong>Dependencies:</strong> <code>JsonRpcMessage.cs</code>, <code>System.Text.Json.Nodes</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/JsonRpcRequest.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Represents a JSON-RPC Request message (<code>method</code>, <code>id</code>, <code>params</code>). Inherits <code>JsonRpcMessageWithId</code>.</li>
+<li><strong>Dependencies:</strong> <code>JsonRpcMessageWithId.cs</code>, <code>System.Text.Json.Nodes</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/JsonRpcErrorDetail.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Record defining the structure of the <code>error</code> object within an error response (<code>code</code>, <code>message</code>, <code>data</code>).</li>
+<li><strong>Dependencies:</strong> .NET BCL.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/JsonRpcError.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Represents a JSON-RPC Error Response message. Inherits <code>JsonRpcMessageWithId</code>.</li>
+<li><strong>Dependencies:</strong> <code>JsonRpcMessageWithId.cs</code>, <code>JsonRpcErrorDetail.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/JsonRpcResponse.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Represents a successful JSON-RPC Response message (<code>result</code>). Inherits <code>JsonRpcMessageWithId</code>.</li>
+<li><strong>Dependencies:</strong> <code>JsonRpcMessageWithId.cs</code>, <code>System.Text.Json.Nodes</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/Annotations.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the <code>Annotations</code> record used within other primitives (<code>audience</code>, <code>priority</code>).</li>
+<li><strong>Dependencies:</strong> <code>Role.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/RequestParamsMetadata.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the structure of the optional <code>_meta</code> field within request parameters (e.g., <code>progressToken</code>).</li>
+<li><strong>Dependencies:</strong> <code>ProgressToken.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/RequestParams.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Abstract base class intended for specific request parameter types (like <code>InitializeRequestParams</code>). Includes the optional <code>Meta</code> property.</li>
+<li><strong>Dependencies:</strong> <code>RequestParamsMetadata.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Messages/PaginatedResult.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Base class for response results that support pagination, defining the <code>NextCursor</code> property.</li>
+<li><strong>Dependencies:</strong> .NET BCL.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/EmptyResult.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Represents an empty result for successful operations that return no specific data.</li>
+<li><strong>Dependencies:</strong> .NET BCL.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 3: Complex MCP Payload Types (Primitives, Capabilities, Content)</strong></p>
+<ol start="26">
+<li><code>ModelContextProtocol/Protocol/Types/Content.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the versatile <code>Content</code> class used in messages/results, representing text, image, audio, or embedded resources based on its <code>Type</code> property.</li>
+<li><strong>Dependencies:</strong> <code>Annotations.cs</code>, <code>Role.cs</code> (via Annotations), <code>ResourceContents.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/ResourceContents.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Abstract base class for resource content. Defines common fields (<code>Uri</code>, <code>MimeType</code>) and the custom <code>JsonConverter</code> for polymorphism.</li>
+<li><strong>Dependencies:</strong> <code>Utils/Json/JsonRpcMessageConverter.cs</code> (Conceptually similar converter needed, maybe defined internally or re-used).</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/TextResourceContents.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Concrete class for text-based resource content (<code>Text</code> property). Inherits <code>ResourceContents</code>.</li>
+<li><strong>Dependencies:</strong> <code>ResourceContents.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/BlobResourceContents.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Concrete class for binary resource content (<code>Blob</code> property as base64 string). Inherits <code>ResourceContents</code>.</li>
+<li><strong>Dependencies:</strong> <code>ResourceContents.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/PromptMessage.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the structure of messages within a prompt result (<code>role</code>, <code>content</code>).</li>
+<li><strong>Dependencies:</strong> <code>Role.cs</code>, <code>Content.cs</code>, <code>EmbeddedResource.cs</code> (defined within).</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/SamplingMessage.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the structure of messages used in sampling requests (<code>role</code>, <code>content</code>).</li>
+<li><strong>Dependencies:</strong> <code>Role.cs</code>, <code>Content.cs</code> (but restricted to Text/Image/Audio).</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/Resource.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the metadata structure for a Resource.</li>
+<li><strong>Dependencies:</strong> <code>Annotations.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/ResourceTemplate.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the metadata structure for a Resource Template.</li>
+<li><strong>Dependencies:</strong> <code>Annotations.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/ToolAnnotations.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines optional behavioral hints for Tools.</li>
+<li><strong>Dependencies:</strong> .NET BCL.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/Tool.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the metadata structure for a Tool, including its <code>InputSchema</code> as a <code>JsonElement</code>.</li>
+<li><strong>Dependencies:</strong> <code>ToolAnnotations.cs</code>, <code>System.Text.Json</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/PromptArgument.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the structure for describing arguments accepted by Prompts.</li>
+<li><strong>Dependencies:</strong> .NET BCL.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/Prompt.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the metadata structure for a Prompt.</li>
+<li><strong>Dependencies:</strong> <code>PromptArgument.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/Root.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the structure for representing a client Root.</li>
+<li><strong>Dependencies:</strong> .NET BCL.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/ModelHint.cs</code>, <code>ModelPreferences.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Define structures related to sampling model preferences.</li>
+<li><strong>Dependencies:</strong> <code>ModelHint.cs</code> depends on BCL, <code>ModelPreferences.cs</code> depends on <code>ModelHint.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/Reference.cs</code>, <code>Argument.cs</code>, <code>Completion.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Define structures specific to the argument completion feature (<code>ref</code>, <code>argument</code>, <code>completion</code> result structure).</li>
+<li><strong>Dependencies:</strong> .NET BCL.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Types/*Capability.cs</code> (<code>ClientCapabilities.cs</code>, <code>ServerCapabilities.cs</code>, <code>LoggingCapability.cs</code>, <code>PromptsCapability.cs</code>, <code>ResourcesCapability.cs</code>, <code>ToolsCapability.cs</code>, <code>CompletionsCapability.cs</code>, <code>RootsCapability.cs</code>, <code>SamplingCapability.cs</code>):
+<ul>
+<li><strong>Purpose:</strong> Define the structures used to declare supported features during initialization. They often contain boolean flags or <code>[JsonIgnore]</code>-ed <code>Func&lt;></code> delegates for handlers (set via configuration/DI).</li>
+<li><strong>Dependencies:</strong> Other specific MCP Types (e.g., <code>McpServerTool</code>, <code>McpServerPrompt</code> for collections, specific <code>*RequestParams</code>, <code>*Result</code> types for handler signatures). <code>Server/RequestContext.cs</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 4: Foundational Interfaces &amp; Shared Logic</strong></p>
+<ol start="42">
+<li><code>ModelContextProtocol/IMcpEndpoint.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Core shared interface defining basic endpoint operations (<code>SendMessageAsync</code>, <code>SendRequestAsync</code>, <code>RegisterNotificationHandler</code>, <code>DisposeAsync</code>).</li>
+<li><strong>Dependencies:</strong> <code>Protocol/Messages/*</code> (basic JSON-RPC types), <code>Func&lt;></code> delegates.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/ITransport.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Interface defining the contract for an active, established communication session (provides <code>MessageReader</code>, <code>SendMessageAsync</code>, <code>DisposeAsync</code>).</li>
+<li><strong>Dependencies:</strong> <code>System.Threading.Channels</code>, <code>Protocol/Messages/JsonRpcMessage.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/IClientTransport.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Interface defining the contract for <em>creating</em> a client transport session (<code>ConnectAsync</code> returning <code>ITransport</code>).</li>
+<li><strong>Dependencies:</strong> <code>ITransport.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Shared/NotificationHandlers.cs</code>, <code>ModelContextProtocol/Shared/RequestHandlers.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Internal helper classes for managing dictionaries of notification and request handlers, respectively, often keyed by method name string. Include logic for registration and invocation.</li>
+<li><strong>Dependencies:</strong> <code>Protocol/Messages/*</code>, <code>Func&lt;></code> delegates.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Shared/McpSession.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> <strong>The core internal engine.</strong> Manages a single MCP session over an <code>ITransport</code>. Handles the message processing loop (<code>ProcessMessagesAsync</code>), request/response correlation (<code>_pendingRequests</code>), dispatching messages to registered handlers (<code>RequestHandlers</code>, <code>NotificationHandlers</code>), cancellation tracking (<code>_handlingRequests</code>), and basic error handling.</li>
+<li><strong>Dependencies:</strong> <code>ITransport.cs</code>, <code>NotificationHandlers.cs</code>, <code>RequestHandlers.cs</code>, <code>Protocol/Messages/*</code>, <code>McpException.cs</code>, <code>Diagnostics.cs</code>, logging, <code>System.Threading.Channels</code>, <code>System.Collections.Concurrent</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Shared/McpEndpoint.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Abstract base class providing common implementation for <code>IMcpEndpoint</code>, likely containing the <code>McpSession</code> instance and delegating core operations to it. Manages disposal and session lifecycle.</li>
+<li><strong>Dependencies:</strong> <code>IMcpEndpoint.cs</code>, <code>McpSession.cs</code>, <code>RequestHandlers.cs</code>, <code>NotificationHandlers.cs</code>, logging.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/TransportBase.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Abstract base class providing common boilerplate for <code>ITransport</code> implementations (channel management via <code>_messageChannel</code>, connection state <code>IsConnected</code>, logging helpers).</li>
+<li><strong>Dependencies:</strong> <code>ITransport.cs</code>, <code>JsonRpcMessage.cs</code>, logging, <code>System.Threading.Channels</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Diagnostics.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Internal static class providing helpers for creating and managing OpenTelemetry <code>Activity</code>s and <code>Meter</code>s specific to MCP operations. Includes context propagation helpers.</li>
+<li><strong>Dependencies:</strong> <code>System.Diagnostics</code>, <code>System.Diagnostics.Metrics</code>, <code>Protocol/Messages/*</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/NopProgress.cs</code>, <code>ModelContextProtocol/ProgressNotificationValue.cs</code>, <code>ModelContextProtocol/TokenProgress.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Support classes for the <code>IProgress&lt;T></code> pattern used for progress reporting. <code>TokenProgress</code> specifically links reports to an <code>IMcpEndpoint</code> and <code>ProgressToken</code>.</li>
+<li><strong>Dependencies:</strong> <code>IMcpEndpoint.cs</code>, <code>Protocol/Messages/ProgressToken.cs</code>, <code>Protocol/Messages/ProgressNotification.cs</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 5: Concrete Transport Implementations</strong></p>
+<p>(These depend on <code>TransportBase</code> or other transports, specific I/O APIs, and messages)</p>
+<ol start="51">
+<li><code>ModelContextProtocol/Protocol/Transport/StreamServerTransport.cs</code>, <code>ModelContextProtocol/Protocol/Transport/StreamClientSessionTransport.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Core implementations for transports based on .NET <code>Stream</code> objects (e.g., <code>TextReader</code>/<code>TextWriter</code>). Handle line-delimited JSON framing. <code>StreamClientSessionTransport</code> is used internally by Stdio and Stream clients.</li>
+<li><strong>Dependencies:</strong> <code>TransportBase.cs</code>, <code>ITransport.cs</code>, .NET Streams, <code>System.Text.Json</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/StdioServerTransport.cs</code>, <code>ModelContextProtocol/Protocol/Transport/StdioClientTransport.cs</code>, <code>ModelContextProtocol/Protocol/Transport/StdioClientSessionTransport.cs</code>, <code>ModelContextProtocol/Protocol/Transport/StdioClientTransportOptions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Implement Stdio transport. Client launches process (<code>System.Diagnostics.Process</code>, <code>ProcessHelper</code>); Server wraps <code>Console</code> streams. Use the stream transport bases.</li>
+<li><strong>Dependencies:</strong> <code>Stream*Transport.cs</code>, <code>IClientTransport.cs</code>, <code>ProcessHelper.cs</code>, .NET <code>Process</code>, <code>Console</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/SseWriter.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Helper class to format and write messages as Server-Sent Events to a stream. Manages event IDs for potential resumability.</li>
+<li><strong>Dependencies:</strong> <code>System.Net.ServerSentEvents</code>, <code>JsonRpcMessage.cs</code>, <code>System.Text.Json</code>, <code>System.Threading.Channels</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/SseClientSessionTransport.cs</code>, <code>ModelContextProtocol/Protocol/Transport/SseClientTransport.cs</code>, <code>ModelContextProtocol/Protocol/Transport/SseClientTransportOptions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Implements client-side HTTP+SSE (legacy) <em>or</em> Streamable HTTP communication based on <code>SseClientTransportOptions.UseStreamableHttp</code>. Uses <code>HttpClient</code> and <code>SseParser</code>. <code>SseClientTransport</code> is the factory; <code>SseClientSessionTransport</code> is the active session transport.</li>
+<li><strong>Dependencies:</strong> <code>TransportBase.cs</code>, <code>IClientTransport.cs</code>, <code>ITransport.cs</code>, <code>HttpClient</code>, <code>SseParser</code>, <code>StreamableHttpClientSessionTransport.cs</code> (if <code>UseStreamableHttp</code> is true).</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/StreamableHttpClientSessionTransport.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Specific logic for Streamable HTTP client sessions (part of the <code>SseClientTransport</code> when <code>UseStreamableHttp</code> is true). Handles POSTing messages and processing SSE/JSON responses from POST, plus managing the optional GET stream.</li>
+<li><strong>Dependencies:</strong> <code>TransportBase.cs</code>, <code>ITransport.cs</code>, <code>HttpClient</code>, <code>SseParser</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/StreamableHttpServerTransport.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Server-side <strong>core logic</strong> for Streamable HTTP (used by ASP.NET Core integration). Implements <code>ITransport</code>. Manages session state (though no session ID itself), handles incoming messages via <code>OnMessageReceivedAsync</code>, sends responses/notifications via <code>SseWriter</code>, interacts with <code>EventStore</code> (interface defined but implementation external) for resumability.</li>
+<li><strong>Dependencies:</strong> <code>ITransport.cs</code>, <code>SseWriter.cs</code>, <code>JsonRpcMessage.cs</code>, <code>System.IO.Pipelines</code>, <code>System.Threading.Channels</code>. Defines <code>EventStore</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/StreamableHttpPostTransport.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Internal helper used by <code>StreamableHttpServerTransport</code> (likely via ASP.NET Core’s <code>StreamableHttpHandler</code>) to manage the request/response flow specifically for a single HTTP POST within the Streamable HTTP model, ensuring responses go back on the correct connection.</li>
+<li><strong>Dependencies:</strong> <code>ITransport.cs</code>, <code>SseWriter.cs</code>, <code>System.IO.Pipelines</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Protocol/Transport/StreamClientTransport.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Client transport factory that wraps pre-existing <code>Stream</code> objects. Useful for testing or custom scenarios.</li>
+<li><strong>Dependencies:</strong> <code>IClientTransport.cs</code>, <code>StreamClientSessionTransport.cs</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 6: Core Client/Server Implementations &amp; Abstractions</strong></p>
+<ol start="59">
+<li><code>ModelContextProtocol/Client/IMcpClient.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Public interface for MCP clients. Inherits <code>IMcpEndpoint</code>. Adds server info/caps properties.</li>
+<li><strong>Dependencies:</strong> <code>IMcpEndpoint.cs</code>, <code>Protocol/Types/*Capabilities.cs</code>, <code>Protocol/Types/Implementation.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/IMcpServer.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Public interface for MCP servers. Inherits <code>IMcpEndpoint</code>. Adds client info/caps properties, <code>ServerOptions</code>, <code>Services</code>, <code>LoggingLevel</code>, <code>RunAsync</code>.</li>
+<li><strong>Dependencies:</strong> <code>IMcpEndpoint.cs</code>, <code>Protocol/Types/*Capabilities.cs</code>, <code>Protocol/Types/Implementation.cs</code>, <code>McpServerOptions.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Client/McpClientOptions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines configuration options for creating an <code>IMcpClient</code>.</li>
+<li><strong>Dependencies:</strong> <code>Protocol/Types/ClientCapabilities.cs</code>, <code>Protocol/Types/Implementation.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/McpServerOptions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines configuration options for creating an <code>IMcpServer</code>. Holds <code>ServerInfo</code>, <code>Capabilities</code>, timeouts, etc.</li>
+<li><strong>Dependencies:</strong> <code>Protocol/Types/ServerCapabilities.cs</code>, <code>Protocol/Types/Implementation.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Client/McpClient.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> The concrete implementation of <code>IMcpClient</code>. Extends <code>McpEndpoint</code>. Contains the logic specific to client initialization and capability management.</li>
+<li><strong>Dependencies:</strong> <code>IMcpClient.cs</code>, <code>Shared/McpEndpoint.cs</code>, <code>IClientTransport.cs</code>, <code>McpClientOptions.cs</code>, <code>Protocol/Types/*</code>, <code>Protocol/Messages/*</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/McpServer.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> The concrete implementation of <code>IMcpServer</code>. Extends <code>McpEndpoint</code>. Contains logic specific to server initialization response, managing client capabilities, and provides the infrastructure for registering handlers via <code>McpServerOptions</code>.</li>
+<li><strong>Dependencies:</strong> <code>IMcpServer.cs</code>, <code>Shared/McpEndpoint.cs</code>, <code>ITransport.cs</code>, <code>McpServerOptions.cs</code>, <code>Protocol/Types/*</code>, <code>Protocol/Messages/*</code>, <code>IServiceProvider</code> (optional).</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/RequestContext.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Container passed to server handler delegates, providing access to the <code>IMcpServer</code>, request <code>Params</code>, and potentially scoped <code>Services</code>.</li>
+<li><strong>Dependencies:</strong> <code>IMcpServer.cs</code>, <code>IServiceProvider</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/IMcpServerPrimitive.cs</code>, <code>McpServerPrimitiveCollection.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines a base interface for server-side Tools/Prompts and a thread-safe collection (<code>ConcurrentDictionary</code>-based) to store them, including a <code>Changed</code> event.</li>
+<li><strong>Dependencies:</strong> .NET BCL Collections.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 7: Factories, Extensions, Primitive Wrappers, Attributes</strong></p>
+<ol start="67">
+<li><code>ModelContextProtocol/Client/McpClientFactory.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Provides the static <code>CreateAsync</code> method, the primary way to instantiate and connect an <code>IMcpClient</code>. Orchestrates transport connection and initialization.</li>
+<li><strong>Dependencies:</strong> <code>IMcpClient.cs</code>, <code>McpClient.cs</code>, <code>IClientTransport.cs</code>, <code>McpClientOptions.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/McpServerFactory.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Provides the static <code>Create</code> method for instantiating an <code>IMcpServer</code>. Primarily used internally by DI extensions but can be used manually.</li>
+<li><strong>Dependencies:</strong> <code>IMcpServer.cs</code>, <code>McpServer.cs</code>, <code>ITransport.cs</code>, <code>McpServerOptions.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/AIContentExtensions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Crucial extension methods for converting between MCP <code>Content</code>/<code>PromptMessage</code> types and <code>Microsoft.Extensions.AI</code> types (<code>AIContent</code>, <code>ChatMessage</code>). Enables integration.</li>
+<li><strong>Dependencies:</strong> <code>Microsoft.Extensions.AI</code> (external), <code>Protocol/Types/*</code> (Content, PromptMessage, Role).</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/McpEndpointExtensions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Provides strongly-typed extension methods (<code>SendRequestAsync&lt;TParams, TResult></code>, <code>SendNotificationAsync&lt;TParams></code>) on <code>IMcpEndpoint</code> for easier message sending/receiving without manual JSON handling.</li>
+<li><strong>Dependencies:</strong> <code>IMcpEndpoint.cs</code>, <code>Protocol/Messages/*</code>, <code>System.Text.Json</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Client/McpClientExtensions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Provides high-level, user-friendly extension methods on <code>IMcpClient</code> for common operations (<code>PingAsync</code>, <code>ListToolsAsync</code>, <code>CallToolAsync</code>, <code>ReadResourceAsync</code>, <code>GetPromptAsync</code>, <code>SubscribeToResourceAsync</code>, <code>SetLoggingLevel</code>, etc.). These wrap <code>McpEndpointExtensions.SendRequestAsync</code>.</li>
+<li><strong>Dependencies:</strong> <code>IMcpClient.cs</code>, <code>McpEndpointExtensions.cs</code>, <code>Protocol/Types/*</code>, <code>Protocol/Messages/*</code>, <code>McpClientTool.cs</code>, <code>McpClientPrompt.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/McpServerExtensions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Provides high-level extension methods on <code>IMcpServer</code> for server-initiated actions like (<code>RequestSamplingAsync</code>, <code>AsSamplingChatClient</code>, <code>AsClientLoggerProvider</code>, <code>RequestRootsAsync</code>).</li>
+<li><strong>Dependencies:</strong> <code>IMcpServer.cs</code>, <code>McpEndpointExtensions.cs</code>, <code>Protocol/Types/*</code>, <code>Protocol/Messages/*</code>, <code>Microsoft.Extensions.AI</code>, <code>Microsoft.Extensions.Logging</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Client/McpClientTool.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Client-side representation of a discovered server Tool. Inherits <code>Microsoft.Extensions.AI.AIFunction</code>, enabling direct use with AI clients. Wraps an <code>IMcpClient</code> and <code>Tool</code> metadata to implement <code>InvokeCoreAsync</code> by calling <code>client.CallToolAsync</code>. Includes <code>WithName</code>/<code>WithDescription</code>/<code>WithProgress</code> customization methods.</li>
+<li><strong>Dependencies:</strong> <code>Microsoft.Extensions.AI</code>, <code>IMcpClient.cs</code>, <code>Protocol/Types/Tool.cs</code>, <code>Protocol/Types/CallToolResponse.cs</code>, <code>ProgressNotificationValue.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Client/McpClientPrompt.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Client-side representation of a discovered server Prompt. Wraps <code>IMcpClient</code> and <code>Prompt</code> metadata. Provides <code>GetAsync</code> method to call <code>client.GetPromptAsync</code>.</li>
+<li><strong>Dependencies:</strong> <code>IMcpClient.cs</code>, <code>Protocol/Types/Prompt.cs</code>, <code>Protocol/Types/GetPromptResult.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/McpServerTool.cs</code>, <code>ModelContextProtocol/Server/McpServerPrompt.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Abstract base classes for server-side Tool/Prompt implementations. Define the <code>ProtocolTool</code>/<code>ProtocolPrompt</code> metadata property and the core <code>InvokeAsync</code>/<code>GetAsync</code> execution methods. Provide static <code>Create</code> factory methods that typically create <code>AIFunctionMcpServerTool/Prompt</code> instances.</li>
+<li><strong>Dependencies:</strong> <code>IMcpServerPrimitive.cs</code>, <code>Protocol/Types/Tool.cs</code>, <code>Protocol/Types/Prompt.cs</code>, <code>RequestContext.cs</code>, <code>AIFunction</code> (external), reflection APIs.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/AIFunctionMcpServerTool.cs</code>, <code>ModelContextProtocol/Server/AIFunctionMcpServerPrompt.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Concrete implementations of <code>McpServerTool</code>/<code>McpServerPrompt</code> that wrap an <code>AIFunction</code>. Handle argument binding (including DI/context parameters via <code>AIFunctionFactoryOptions</code>), schema generation, method invocation, and result conversion.</li>
+<li><strong>Dependencies:</strong> <code>McpServerTool/Prompt.cs</code>, <code>AIFunction</code> (external), <code>RequestContext.cs</code>, <code>Protocol/Types/*</code>, <code>AIContentExtensions.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/DelegatingMcpServerTool.cs</code>, <code>ModelContextProtocol/Server/DelegatingMcpServerPrompt.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Abstract base classes useful for creating decorators or wrappers around existing <code>McpServerTool</code>/<code>McpServerPrompt</code> instances.</li>
+<li><strong>Dependencies:</strong> <code>McpServerTool/Prompt.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/*Attribute.cs</code> (<code>McpServerToolAttribute.cs</code>, <code>McpServerToolTypeAttribute.cs</code>, <code>McpServerPromptAttribute.cs</code>, <code>McpServerPromptTypeAttribute.cs</code>):
+<ul>
+<li><strong>Purpose:</strong> Attributes used by DI extensions (<code>WithToolsFromAssembly</code>, etc.) to discover methods and classes that should be registered as MCP Tools or Prompts. Contain metadata like <code>Name</code>, <code>Description</code>, <code>ToolAnnotations</code>.</li>
+<li><strong>Dependencies:</strong> .NET BCL Attributes.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/McpServerToolCreateOptions.cs</code>, <code>ModelContextProtocol/Server/McpServerPromptCreateOptions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Classes holding configuration options used by the <code>McpServerTool/Prompt.Create</code> factory methods, allowing programmatic customization equivalent to attribute properties.</li>
+<li><strong>Dependencies:</strong> <code>IServiceProvider</code>, <code>JsonSerializerOptions</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 8: Dependency Injection &amp; Hosting Configuration</strong></p>
+<ol start="80">
+<li><code>ModelContextProtocol/Configuration/IMcpServerBuilder.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> Defines the fluent builder interface returned by <code>AddMcpServer</code>, exposing the <code>Services</code> collection.</li>
+<li><strong>Dependencies:</strong> <code>Microsoft.Extensions.DependencyInjection</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Configuration/DefaultMcpServerBuilder.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> The default, internal implementation of <code>IMcpServerBuilder</code>.</li>
+<li><strong>Dependencies:</strong> <code>IMcpServerBuilder.cs</code>, <code>Microsoft.Extensions.DependencyInjection</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Server/McpServerHandlers.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> A container class, typically configured via DI Options, holding the <code>Func&lt;></code> delegates for low-level request handlers (ListTools, CallTool, ReadResource, etc.).</li>
+<li><strong>Dependencies:</strong> <code>RequestContext.cs</code>, specific <code>*RequestParams</code> and <code>*Result</code> types from <code>Protocol/Types/</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Configuration/McpServerOptionsSetup.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> An <code>IConfigureOptions&lt;McpServerOptions></code> implementation. Runs during DI container build. It retrieves registered <code>McpServerTool</code>s, <code>McpServerPrompt</code>s, and <code>IOptions&lt;McpServerHandlers></code> from DI and populates the corresponding collections and handler delegates within the final <code>McpServerOptions</code>. This wires up the DI registrations to the server configuration.</li>
+<li><strong>Dependencies:</strong> <code>Microsoft.Extensions.Options</code>, <code>Microsoft.Extensions.DependencyInjection</code>, <code>McpServerOptions.cs</code>, <code>McpServerHandlers.cs</code>, <code>McpServerTool.cs</code>, <code>McpServerPrompt.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Configuration/McpServerBuilderExtensions.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> <strong>The primary user-facing API for DI configuration.</strong> Defines extension methods like <code>AddMcpServer</code>, <code>WithTools&lt;T></code>, <code>WithPromptsFromAssembly</code>, <code>WithListResourcesHandler</code>, <code>WithStdioServerTransport</code>, <code>WithHttpTransport</code>. These methods register services, configure options, and add primitives to the DI container.</li>
+<li><strong>Dependencies:</strong> <code>IMcpServerBuilder.cs</code>, <code>Microsoft.Extensions.DependencyInjection</code>, <code>McpServerHandlers.cs</code>, <code>McpServerOptions.cs</code>, <code>ITransport.cs</code>, <code>McpServerTool/Prompt.cs</code>.</li>
+</ul>
+</li>
+<li><code>ModelContextProtocol/Hosting/SingleSessionMcpServerHostedService.cs</code>:
+<ul>
+<li><strong>Purpose:</strong> An <code>IHostedService</code> implementation used by <code>WithStdioServerTransport</code> and <code>WithStreamServerTransport</code>. It retrieves the <code>IMcpServer</code> from DI and calls <code>server.RunAsync()</code> when the .NET host starts, managing the lifecycle for single-session transports.</li>
+<li><strong>Dependencies:</strong> <code>Microsoft.Extensions.Hosting</code>, <code>IMcpServer.cs</code>.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 9: ASP.NET Core Integration</strong></p>
+<ol start="86">
+<li><code>ModelContextProtocol.AspNetCore/*</code>: These files depend heavily on ASP.NET Core abstractions (<code>HttpContext</code>, <code>IEndpointRouteBuilder</code>, <code>RequestDelegate</code>, <code>IDuplexPipe</code>, etc.) as well as the core MCP Server components (<code>McpServerFactory</code>, <code>IMcpServer</code>, <code>McpServerOptions</code>) and transports (<code>StreamableHttpServerTransport</code>, <code>SseResponseStreamTransport</code>).
+<ul>
+<li><code>HttpServerTransportOptions.cs</code>: Defines options specific to ASP.NET Core hosting (<code>IdleTimeout</code>, <code>ConfigureSessionOptions</code>, <code>RunSessionHandler</code>).</li>
+<li><code>HttpMcpSession.cs</code>: Internal class managing state for a single HTTP-based session.</li>
+<li><code>IdleTrackingBackgroundService.cs</code>: Uses hosting and options to clean up idle sessions.</li>
+<li><code>StreamableHttpHandler.cs</code> / <code>SseHandler.cs</code>: The core request delegates implementing the transport logic using ASP.NET Core APIs.</li>
+<li><code>HttpMcpServerBuilderExtensions.cs</code>: Defines <code>.WithHttpTransport()</code> for DI setup.</li>
+<li><code>McpEndpointRouteBuilderExtensions.cs</code>: Defines <code>.MapMcp()</code> for routing setup.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Level 10: Samples &amp; Tests</strong></p>
+<ol start="87">
+<li><code>samples/**/*.cs</code>: Demonstrate usage of the SDK features. Depend on the core SDK libraries (<code>ModelContextProtocol</code>), potentially ASP.NET Core integration (<code>ModelContextProtocol.AspNetCore</code>), and external libraries (<code>Microsoft.Extensions.Hosting</code>, <code>Anthropic.SDK</code>).</li>
+<li><code>tests/**/*.cs</code>: Verify the correctness and behavior of SDK components. Depend on the specific parts of the SDK being tested, testing frameworks (xUnit), mocking libraries (Moq), and utility helpers (<code>tests/Common</code>, <code>tests/ModelContextProtocol.AspNetCore.Tests/Utils</code>).</li>
+</ol>
+<p>This detailed ordering highlights the layered nature of the SDK, moving from fundamental definitions up through core logic, specific implementations, abstractions, and finally application-level integrations and testing.</p></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.0</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script type="application/javascript">
+        const socket = new WebSocket('ws://localhost:3001')
+        // reload(true) ensures resources like images and scripts are fetched again in firefox
+        socket.addEventListener('message', () => document.location.reload(true))
+      </script><script src="../postscript.js" type="module"></script></html>

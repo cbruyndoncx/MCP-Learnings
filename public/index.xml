@@ -5,6 +5,66 @@
       <link>https://quartz.jzhao.xyz</link>
       <description>Last 10 notes on MCP Learnings</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
-      
+      <item>
+    <title>001_model</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/001_model</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/001_model</guid>
+    <description>Okay, let’s break down the modelcontextprotocol-typescript-sdk project based on the provided file structure and content.</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>003_model</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/003_model</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/003_model</guid>
+    <description>Okay, let’s analyze the modelcontextprotocol-python-sdk project.</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>005_model</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/005_model</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/005_model</guid>
+    <description>Okay, here is a plan for a 10-part blog series diving deep into the MCP TypeScript and Python SDKs, covering inner workings, comparisons, and end-user implications.</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>Blog 1: Unpacking the Model Context Protocol SDKs: Bridging the AI Context Gap</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-1</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-1</guid>
+    <description>Blog 1: Unpacking the Model Context Protocol SDKs: Bridging the AI Context Gap Series: Deep Dive into the Model Context Protocol SDKs (TypeScript &amp; Python) Post: 1 of 10 Large Language Models (LLMs) are incredibly powerful, but they often operate with a kind of digital amnesia.</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>Blog 10: Synthesis - MCP SDKs, Developer Experience, Use Cases, and the Road Ahead</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-10</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-10</guid>
+    <description>Blog 10: Synthesis - MCP SDKs, Developer Experience, Use Cases, and the Road Ahead Series: Deep Dive into the Model Context Protocol SDKs (TypeScript, Python, C#) Post: 10 of 10 We’ve reached the conclusion of our deep dive into the Model Context Protocol (MCP) SDKs! Over the past nine posts, we’ve ...</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>Blog 2: The Lingua Franca - Defining MCP Types with Zod and Pydantic</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-2</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-2</guid>
+    <description>Blog 2: The Lingua Franca - Defining MCP Types with Zod and Pydantic Series: Deep Dive into the Model Context Protocol SDKs (TypeScript &amp; Python) Post: 2 of 10 In our previous post, we introduced the Model Context Protocol (MCP) and its official TypeScript and Python SDKs.</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>Blog 3: Building MCP Servers the Easy Way: McpServer (TS) vs. FastMCP (Python)</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-3</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-3</guid>
+    <description>Blog 3: Building MCP Servers the Easy Way: McpServer (TS) vs.</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>Blog 4: Under the Hood - The MCP Server Core (TypeScript &amp; Python)</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-4</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-4</guid>
+    <description>Blog 4: Under the Hood - The MCP Server Core (TypeScript &amp; Python) Series: Deep Dive into the Model Context Protocol SDKs (TypeScript &amp; Python) Post: 4 of 10 In Blog 3, we explored the convenient high-level server APIs, McpServer (TypeScript) and FastMCP (Python), which significantly simplif...</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>Blog 5: Client Architecture - Consuming MCP Services (TypeScript &amp; Python)</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-5</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-5</guid>
+    <description>Blog 5: Client Architecture - Consuming MCP Services (TypeScript &amp; Python) Series: Deep Dive into the Model Context Protocol SDKs (TypeScript &amp; Python) Post: 5 of 10 So far in our series, we’ve focused on the server side of the Model Context Protocol (MCP) equation.</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item><item>
+    <title>Blog 6: Bridging Worlds - Transport Deep Dive (Stdio &amp; Foundational HTTP)</title>
+    <link>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-6</link>
+    <guid>https://quartz.jzhao.xyz/1-Official-py-and-ts-sdk-tutes/Blogs/blog-6</guid>
+    <description>Blog 6: Bridging Worlds - Transport Deep Dive (Stdio &amp; Foundational HTTP) Series: Deep Dive into the Model Context Protocol SDKs (TypeScript &amp; Python) Post: 6 of 10 Welcome back to our deep dive into the Model Context Protocol (MCP) SDKs! In previous posts, we’ve dissected the type systems, ...</description>
+    <pubDate>Thu, 08 May 2025 22:09:05 GMT</pubDate>
+  </item>
     </channel>
   </rss>
